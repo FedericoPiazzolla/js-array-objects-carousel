@@ -16,28 +16,6 @@ body {
   margin-bottom: 3rem;
 }
 
-.buttons {
-  width: 600px;
-  height: 100px;
-  display: flex;
-  gap: 3rem;
-  align-items: center;
-  justify-content: center;
-}
-
-button {
-  font-size: 1.5rem;
-  padding: .5rem 1rem;
-  border-radius: 5px;
-  background-color: rgb(28, 23, 102);
-  color: white;
-}
-
-button:hover {
-  opacity: 0.8;
-  border: 5px groove black;
-}
-
 .container {
   max-width: 900px;
   height: 100vh;
@@ -62,7 +40,6 @@ button:hover {
   padding: 0 3rem;
   font-size: 1.5rem;
   font-weight: bold;
-  -webkit-text-stroke: .5px black;
 }
 
 .item {
