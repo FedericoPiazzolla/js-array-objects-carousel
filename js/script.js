@@ -75,7 +75,7 @@ thumbItem.forEach((curThumb, i) => {
 // INTERVALLO
 let myInterval = setInterval(() => {
   upImg();
-}, 2000);
+}, 3000);
 
 const thumbContainer = document.querySelector(".thumbs");
 
@@ -86,7 +86,7 @@ thumbContainer.addEventListener("mouseover", function(){
 thumbContainer.addEventListener("mouseout", function(){
   myInterval = setInterval(() => {
     upImg();
-  }, 2000);
+  }, 3000);
 });
 
 /**************************************/
