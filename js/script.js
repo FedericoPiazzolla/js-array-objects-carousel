@@ -26,8 +26,6 @@ const images = [
   }
 ];
 
-console.log(images);
-
 let thumbImg = "";
 let bigImg = "";
 
@@ -52,5 +50,57 @@ images.forEach(curImg => {
 document.querySelector(".thumbs").innerHTML += thumbImg;
 document.querySelector(".items").innerHTML = bigImg;
 
+const imgItem = document.querySelectorAll(".item");
+const thumbItem = document.querySelectorAll(".thumb");
+
+let activeIndex = 0;
+imgItem[activeIndex].classList.add("active");
+thumbItem[activeIndex].classList.add("active");
+
+document.querySelector(".next").addEventListener("click", function(){
+  upImg();
+})
+
+document.querySelector(".prev").addEventListener("click", function(){
+  downImg();
+})
+
+thumbItem.forEach((curThumb, i) => {
+  curThumb.addEventListener("click", function(){
+    imgSelected(i);
+  })
+});
+
 /**************************************/
 // FUNCTION
+function upImg() {
+  imgItem[activeIndex].classList.remove("active");
+  thumbItem[activeIndex].classList.remove("active");
+
+  (activeIndex < imgItem.length - 1) ? activeIndex++ : activeIndex = 0;
+
+  imgItem[activeIndex].classList.add("active");
+  thumbItem[activeIndex].classList.add("active");
+}
+
+
+function downImg() {
+  imgItem[activeIndex].classList.remove("active");
+  thumbItem[activeIndex].classList.remove("active");
+
+  (activeIndex > 0) ? activeIndex-- : activeIndex = imgItem.length - 1;
+
+  imgItem[activeIndex].classList.add("active");
+  thumbItem[activeIndex].classList.add("active");
+}
+
+
+function imgSelected (index) {
+  imgItem[activeIndex].classList.remove("active");
+  thumbItem[activeIndex].classList.remove("active");
+
+  activeIndex = index;
+  
+  imgItem[activeIndex].classList.add("active");
+  thumbItem[activeIndex].classList.add("active");
+}

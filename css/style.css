@@ -37,9 +37,16 @@ body {
   bottom: 5%;
   color: white;
   text-align:end;
-  padding: 0 3rem;
+  padding: 0 2rem;
+  background: rgba(0, 0, 0, .6);
   font-size: 1.5rem;
   font-weight: bold;
+}
+
+.description p {
+  font-size: 1.3rem;
+  font-style: italic;
+  padding-top: 1rem;
 }
 
 .item {
@@ -66,7 +73,7 @@ body {
 
 .thumb {
   height: calc((400px) / 5);
-  opacity: 0.5;
+  opacity: 0.2;
 }
 
 .thumb img {
@@ -77,7 +84,7 @@ body {
 
 .thumb.active {
   border: 2px solid #ccc;
-  opacity: 1;
+  opacity: 0.6;
 }
 
 .prev, .next {
