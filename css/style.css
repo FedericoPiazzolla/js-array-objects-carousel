@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #ccc;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.buttons {
+  width: 600px;
+  height: 100px;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  font-size: 1.5rem;
+  padding: .5rem 1rem;
+  border-radius: 5px;
+  background-color: rgb(28, 23, 102);
+  color: white;
+}
+
+button:hover {
+  opacity: 0.8;
+  border: 5px groove black;
+}
+
+.container {
+  max-width: 900px;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.items {
+  position: relative;
+  width: 700px;
+  height: 400px;
+}
+
+.description {
+  position: absolute;
+  bottom: 5%;
+  color: white;
+  text-align:end;
+  padding: 0 3rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  -webkit-text-stroke: .5px black;
+}
+
+.item {
+  height: 100%;
+  display: none;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item.active {
+  display: block;
+}
+
+.thumbs {
+  width: 250px;
+  height: 400px;
+  background: #000;
+  position: relative;
+}
+
+.thumb {
+  height: calc((400px) / 5);
+  opacity: 0.5;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumb.active {
+  border: 2px solid #ccc;
+  opacity: 1;
+}
+
+.prev, .next {
+  width: 20px;
+  height: 20px;
+  margin: 10px 0;
+  border-radius: 50%;
+  background: #ccc;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  cursor: pointer;
+  z-index: 999;
+}
+
+.prev {
+  top: 0;
+}
+
+.next {
+  bottom: 0;
+}
+
+.prev::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  display: block;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%) rotate(-45deg);
+}
+
+.next::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  display: block;
+  position: absolute;
+  bottom: 35%;
+  left: 50%;
+  transform: translate(-50%) rotate(135deg);
+}
