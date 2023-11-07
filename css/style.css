@@ -1,3 +1,4 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -7,17 +8,19 @@
 body {
   display: flex;
   flex-direction: column;
-  background-color: #ccc;
+  background-color: rgba(9, 9, 152, 0.734);
 }
 
+/* MAIN */
 .carousel {
   display: flex;
   align-items: center;
   margin-bottom: 3rem;
+  border: 3px solid yellow;
 }
 
 .container {
-  max-width: 900px;
+  width: 80%;
   height: 100vh;
   margin: 0 auto;
   display: flex;
@@ -83,21 +86,24 @@ body {
 }
 
 .thumb.active {
-  border: 2px solid #ccc;
+  border: 2px solid yellow;
   opacity: 0.6;
 }
 
 .prev, .next {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   margin: 10px 0;
   border-radius: 50%;
-  background: #ccc;
+  background: yellow;
   position: absolute;
   left: 50%;
   transform: translate(-50%);
   cursor: pointer;
   z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .prev {
@@ -106,32 +112,4 @@ body {
 
 .next {
   bottom: 0;
-}
-
-.prev::after {
-  content: '';
-  width: 10px;
-  height: 10px;
-  transform: rotate(45deg);
-  border-top: 1px solid black;
-  border-right: 1px solid black;
-  display: block;
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%) rotate(-45deg);
-}
-
-.next::before {
-  content: '';
-  width: 10px;
-  height: 10px;
-  transform: rotate(45deg);
-  border-top: 1px solid black;
-  border-right: 1px solid black;
-  display: block;
-  position: absolute;
-  bottom: 35%;
-  left: 50%;
-  transform: translate(-50%) rotate(135deg);
 }

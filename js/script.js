@@ -54,21 +54,39 @@ const imgItem = document.querySelectorAll(".item");
 const thumbItem = document.querySelectorAll(".thumb");
 
 let activeIndex = 0;
+
 imgItem[activeIndex].classList.add("active");
 thumbItem[activeIndex].classList.add("active");
 
 document.querySelector(".next").addEventListener("click", function(){
   upImg();
-})
+});
 
 document.querySelector(".prev").addEventListener("click", function(){
   downImg();
-})
+});
 
 thumbItem.forEach((curThumb, i) => {
   curThumb.addEventListener("click", function(){
     imgSelected(i);
   })
+});
+
+// INTERVALLO
+let myInterval = setInterval(() => {
+  upImg();
+}, 2000);
+
+const thumbContainer = document.querySelector(".thumbs");
+
+thumbContainer.addEventListener("mouseover", function(){
+  clearInterval(myInterval)
+});
+
+thumbContainer.addEventListener("mouseout", function(){
+  myInterval = setInterval(() => {
+    upImg();
+  }, 2000);
 });
 
 /**************************************/
@@ -81,7 +99,7 @@ function upImg() {
 
   imgItem[activeIndex].classList.add("active");
   thumbItem[activeIndex].classList.add("active");
-}
+};
 
 
 function downImg() {
@@ -92,7 +110,7 @@ function downImg() {
 
   imgItem[activeIndex].classList.add("active");
   thumbItem[activeIndex].classList.add("active");
-}
+};
 
 
 function imgSelected (index) {
@@ -103,4 +121,4 @@ function imgSelected (index) {
   
   imgItem[activeIndex].classList.add("active");
   thumbItem[activeIndex].classList.add("active");
-}
+};
