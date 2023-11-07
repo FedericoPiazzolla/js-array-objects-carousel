@@ -80,7 +80,7 @@ let myInterval = setInterval(() => {
 const thumbContainer = document.querySelector(".thumbs");
 
 thumbContainer.addEventListener("mouseover", function(){
-  clearInterval(myInterval)
+  clearInterval(myInterval);
 });
 
 thumbContainer.addEventListener("mouseout", function(){
